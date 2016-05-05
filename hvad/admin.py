@@ -240,7 +240,7 @@ class TranslatableAdmin(ModelAdmin, TranslatableModelAdminMixin):
         if request.POST: # The user has already confirmed the deletion.
             if perms_needed:
                 raise PermissionDenied
-            obj_display = '%s translation of %s' % (lang, force_text(obj.master))
+            obj_display = u'%s translation of %s' % (lang, force_text(obj.master))
             self.log_deletion(request, obj, obj_display)
             self.delete_model_translation(request, obj)
 
